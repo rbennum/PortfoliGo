@@ -1,0 +1,10 @@
+<html>
+<body>
+  <h1>PortfoliGo</h1>
+  <ul>
+    {{range .}}
+      <li><a href="{{.URL}}">{{.Name}}</a> - {{.Description}}</li>
+    {{end}}
+  </ul>
+</body>
+</html>
