@@ -1,2 +1,4 @@
 # Ignore environment file
 .env
+**/debug*
+**/go.sum
