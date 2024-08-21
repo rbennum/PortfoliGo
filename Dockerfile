@@ -4,9 +4,6 @@ WORKDIR /app
 
 COPY go.mod ./
 
-# If go.sum actually exists, don't forget to add below code as well
-# COPY go.sum ./
-
 RUN go mod download
 
 COPY . .

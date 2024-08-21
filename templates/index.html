@@ -1,16 +1,17 @@
 <html>
 <body>
   <h1>PortfoliGo</h1>
-  <p>
-    Hi, I'm Bening, a software engineer. Why is this called "PortfoliGo"?
-  </p>
-  <p></p>
-  <p><i>A combination of "Portfolio" and "Go," highlighting that this project is a portfolio built with Golang.</i> I consulted ChatGPT, fyi.</p>
+  <p>Hi, I'm Bening, a software engineer.</p>
+  <p>Why is this called "PortfoliGo"?</p>  
+  <blockquote>
+    A combination of "Portfolio" and "Go," highlighting that this project is a portfolio built with Golang.
+  </blockquote>
+  <p><i>Thanks ChatGPT for the idea</i> ✌🏻</p>
   <br>
-  <p>Portfolio List</p>
+  <p>Anyway, this is the portfolio list you're looking for:</p>
   <ul>
     {{range .}}
-      <li><a href="{{.URL}}">{{.Name}}</a> - {{.Description}}</li>
+      <li><a href="{{.URL}}">{{.Name}}</a> - {{.ShortDesc}}</li>
     {{end}}
   </ul>
 </body>
