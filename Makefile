@@ -30,7 +30,6 @@ run-docker: apply-env
 	rbennum2329/portfoligo:$(IMAGE_TAG)
 
 clean:
-	@rm -rf ./dist/*
 	@docker container stop portfoligo
 	@docker container remove portfoligo
 

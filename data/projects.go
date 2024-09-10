@@ -47,8 +47,8 @@ var Projects = []Project{
 	{
 		Name:       "Ajaib Kripto",
 		Desc:       "Imagine the previous app, but for selling crypto stuff. Also developing the same modules, as it was on the same repo. So it's like two sides of the same coin (am I using it right?).",
-		ProjectURL: "",
-		GithubURL:  "https://apps.apple.com/id/app/ajaib-kripto-buy-btc-crypto/id1634168301",
+		ProjectURL: "https://apps.apple.com/id/app/ajaib-kripto-buy-btc-crypto/id1634168301",
+		GithubURL:  "",
 		Tech:       []string{"Swift", "UIKit", "SnapKit", "TCA"},
 	},
 }
