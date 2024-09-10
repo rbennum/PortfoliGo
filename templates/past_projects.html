@@ -1,0 +1,22 @@
+{{ define "past_projects" }}
+<div class="container">
+    <h2>Past Projects</h2>
+    <div class="project-list">
+        {{range .ProjectList}}
+        <div class="project-item">
+            <h3>{{.Name}}</h3>
+            <p>{{.Desc}}</p>
+            <p><a href="{{.ProjectURL}}" target="_blank">View Project</a></p>
+            {{if .GithubURL}}
+            <p><a href="{{.GithubURL}}" target="_blank">View on GitHub</a></p>
+            {{end}}
+            <div class="tech-stack">
+                {{range .Tech}}
+                <span>{{.}}</span>
+                {{end}}
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+{{ end }}

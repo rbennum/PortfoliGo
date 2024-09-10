@@ -1,36 +1,35 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 
 	"github.com/rbennum/PortfoliGo/data"
 )
 
 func main() {
+	appPort := os.Getenv("APP_PORT")
 	http.HandleFunc("/", homeHandler)
-	for _, project := range data.Projects {
-		http.HandleFunc(project.URL, projectHandler(project))
-	}
+	http.Handle("/dist/", http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist"))))
 
-	log.Println("Starting server on :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Printf("Starting server on :%s", appPort)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", appPort), nil))
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(
-		template.ParseFiles(filepath.Join("templates", "index.html")),
+		template.ParseFiles(
+			filepath.Join("templates", "index.html"),
+			filepath.Join("templates", "header.html"),
+			filepath.Join("templates", "footer.html"),
+			filepath.Join("templates", "main.html"),
+			filepath.Join("templates", "tech_list.html"),
+			filepath.Join("templates", "past_projects.html"),
+		),
 	)
-	tmpl.Execute(w, data.Projects)
-}
-
-func projectHandler(project data.Project) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(
-			template.ParseFiles(filepath.Join("templates", "portfolio.html")),
-		)
-		tmpl.Execute(w, project)
-	}
+	tmpl.Execute(w, data.PageDataItem)
 }

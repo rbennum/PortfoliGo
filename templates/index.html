@@ -1,18 +1,21 @@
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <title>Bening Ranum</title>
+  </head>
 <body>
-  <h1>PortfoliGo</h1>
-  <p>Hi, I'm Bening, a software engineer.</p>
-  <p>Why is this called "PortfoliGo"?</p>  
+  {{ template "header" . }}
+
+  <!-- <p>Why is this called "PortfoliGo"?</p>  
   <blockquote>
     A combination of "Portfolio" and "Go," highlighting that this project is a portfolio built with Golang.
   </blockquote>
   <p><i>Thanks ChatGPT for the idea</i> ✌🏻</p>
-  <br>
-  <p>Anyway, this is the portfolio list you're looking for:</p>
-  <ul>
-    {{range .}}
-      <li><a href="{{.URL}}">{{.Name}}</a> - {{.ShortDesc}}</li>
-    {{end}}
-  </ul>
+  <br> -->
+  {{ block "main" . }}{{ end }}
+  {{ template "footer" . }}
 </body>
 </html>

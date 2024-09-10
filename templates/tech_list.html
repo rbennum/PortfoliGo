@@ -1,0 +1,13 @@
+{{ define "tech_list" }}
+<div class="container">
+    <h2>Technology List</h2>
+    <div class="tech-list">
+        {{range .TechList}}
+        <div class="tech-item">
+            <img src="{{.ImageURL}}" alt="{{.Name}}">
+            <span>{{.Name}}</span>
+        </div>
+        {{end}}
+    </div>
+</div>
+{{ end }}

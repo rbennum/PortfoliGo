@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+    <!-- <p>Anyway, this is the portfolio list you're looking for:</p>
+    <ul>
+        {{range .TechList}}
+            <li><a href="{{.ImageURL}}">{{.Name}}</a> - {{.Name}}</li>
+        {{end}}
+    </ul> -->
+    {{ block "tech_list" . }}{{end}}
+    {{ block "past_projects" . }}{{end}}
+</main>
+{{ end }}
